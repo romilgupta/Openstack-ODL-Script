@@ -118,13 +118,15 @@ def initialize_system():
     if not os.geteuid() == 0:
         sys.exit('Please re-run the script with root user')
 
-    execute("apt-get clean" , True)
-    execute("apt-get autoclean -y" , True)
-    execute("apt-get update -y" , True)
+    if not offline_mode:
+        execute("apt-get clean" , True)
+        execute("apt-get autoclean -y" , True)
+        execute("apt-get update -y" , True)
     execute("apt-get install ubuntu-cloud-keyring python-setuptools python-iniparse python-psutil -y", True)
     delete_file("/etc/apt/sources.list.d/juno.list")
     execute("echo deb http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/juno main >> /etc/apt/sources.list.d/juno.list")
-    execute("apt-get update -y", True)
+    if not offline_mode:
+        execute("apt-get update -y", True)
 
     global iniparse
     if iniparse is None:
@@ -141,6 +143,7 @@ ip_address_mgmt = get_ip_address("eth0")
 ip_address_data = get_ip_address("eth1")
 odl_ip = raw_input("OpenDaylight Controller IP: ")
 odl_port = raw_input("Opendaylight Controller Port: ")
+offline_mode = raw_input("Offline Mode True|False: ")
 
 def install_rabbitmq():
     execute("apt-get install rabbitmq-server -y", True)
@@ -410,7 +413,7 @@ def install_and_configure_ovs_odl():
     execute("sudo ovs-vsctl set-manager tcp:%s:6640" % odl_ip)
     ovstbl  = execute("sudo ovs-vsctl get Open_vSwitch . _uuid")
     execute("sudo ovs-vsctl set Open_vSwitch %(ovstbl)s other_config:local_ip=%(ip_address_data)s" % {'ovstbl': ovstbl, 'ip_address_data': ip_address_data})
-    execute("sudo ovs-vsctl show", True)
+    execute("ovs-vsctl list Open_vSwitch", True)
 
 
 def install_and_configure_dashboard():
