@@ -1,7 +1,7 @@
 Openstack with Opendaylight Installation scripts for Ubuntu 14.04 LTS
 ================
 
-For Openstack Controller :
+Single Node Openstack :
 --------------------------
 
 Operating System : Ubuntu14.04 LTS
