@@ -407,6 +407,10 @@ def install_and_configure_neutron():
 def install_and_configure_ovs_odl():
     execute("apt-get install openvswitch-switch openvswitch-datapath-dkms -y", True)
     execute("sudo ovs-vsctl show", True)
+    execute("sudo ovs-vsctl set-manager tcp:%s:6640" % odl_ip)
+    ovstbl  = execute("sudo ovs-vsctl get Open_vSwitch . _uuid")
+    execute("sudo ovs-vsctl set Open_vSwitch %(ovstbl)s other_config:local_ip=%(ip_address_data)s" % {'ovstbl': ovstbl, 'ip_address_data': ip_address_data})
+    execute("sudo ovs-vsctl show", True)
 
 
 def install_and_configure_dashboard():
