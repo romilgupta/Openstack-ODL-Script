@@ -9,8 +9,15 @@ Single Node Openstack Juno :
 
   NIC's::
 
-    Eth0 : Public Network/Management Network
+    Eth0: Public Network/Management Network
     Eth1: Data Network
+
+Download the Openstak-ODL-Scripts::
+  
+  git clone https://github.com/romilgupta/Openstack-ODL-Scripts.git
+  cd Openstack-ODL-Scripts
+  
+Run ``python install_openstack.py``
 
 Script will prompt you to enter following inputs::
 
@@ -20,13 +27,11 @@ Script will prompt you to enter following inputs::
   raw_input("Opendaylight Controller Port: ")
   raw_input("Offline Mode True|False: ") # Provide False when you are runnning it first time.
 
-This script install following components of openstack and configure them::
+The script will install following components of openstack and configure them::
 
   Keystone
   Glance
-  Neutron( neutron-server with Opendaylight, dhcp-agent, l3-agent)
+  Neutron(neutron-server with Opendaylight, dhcp-agent, l3-agent)
   Openvswitch
-  Nova( nova-api nova-cert nova-scheduler nova-conductor novnc nova-consoleauth nova-novncproxy, nova-compute)
+  Nova(nova-api nova-cert nova-scheduler nova-conductor novnc nova-consoleauth nova-novncproxy, nova-compute)
   Dashboard
-
-Run ``python install_openstack.py``
