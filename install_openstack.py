@@ -1,4 +1,14 @@
 #! /usr/bin/python
+# Title           : install_openstack.py.
+# Description     : This will install the Openstack.
+# Authors         : Romil Gupta, Ishant Tyagi.
+# Date            : 17-04-2015.
+# Version         : 0.1
+# Usage           : python install_openstack.py.
+# Notes           : Provide the valid inputs.
+# Python_version  : 2.7
+#==========================================================================
+
 import sys
 import os
 import time
