@@ -118,14 +118,14 @@ def initialize_system():
     if not os.geteuid() == 0:
         sys.exit('Please re-run the script with root user')
 
-    if not offline_mode:
+    if offline_mode == 'True':
         execute("apt-get clean" , True)
         execute("apt-get autoclean -y" , True)
         execute("apt-get update -y" , True)
     execute("apt-get install ubuntu-cloud-keyring python-setuptools python-iniparse python-psutil -y", True)
     delete_file("/etc/apt/sources.list.d/juno.list")
     execute("echo deb http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/juno main >> /etc/apt/sources.list.d/juno.list")
-    if not offline_mode:
+    if offline_mode == 'True':
         execute("apt-get update -y", True)
 
     global iniparse
@@ -139,8 +139,10 @@ def initialize_system():
 #==================   Components Installation Starts Here ========================
 #=================================================================================
 
-ip_address_mgmt = get_ip_address("eth0")
-ip_address_data = get_ip_address("eth1")
+# ip_address_mgmt = get_ip_address("eth0")
+# ip_address_data = get_ip_address("eth1")
+ip_address_mgmt = raw_input("Management Interface IP: ")
+ip_address_data = raw_input("Data Interface IP: ")
 odl_ip = raw_input("OpenDaylight Controller IP: ")
 odl_port = raw_input("Opendaylight Controller Port: ")
 offline_mode = raw_input("Offline Mode True|False: ")
