@@ -2,15 +2,15 @@
 Openstack with Opendaylight Installation scripts for Ubuntu 14.04 LTS
 ====================================================================
 
-Single Node Openstack Juno ::
+Single Node Openstack Juno :
 --------------------------
 
   Operating System : Ubuntu14.04 LTS
 
   NIC's::
 
-  Eth0 : Public Network/Management Network
-  Eth1: Data Network
+    Eth0 : Public Network/Management Network
+    Eth1: Data Network
 
 Script will prompt you to enter following inputs::
 
@@ -29,4 +29,4 @@ This script install following components of openstack and configure them::
   Nova( nova-api nova-cert nova-scheduler nova-conductor novnc nova-consoleauth nova-novncproxy, nova-compute)
   Dashboard
 
-Run ''python install_openstack.py''
+Run ``python install_openstack.py``
