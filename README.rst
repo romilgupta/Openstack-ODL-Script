@@ -1,5 +1,5 @@
 ====================================================================
-Openstack with Opendaylight Installation scripts for Ubuntu 14.04 LTS
+Openstack with Opendaylight Installation script for Ubuntu 14.04 LTS
 ====================================================================
 
 Single Node Openstack Juno :
@@ -12,10 +12,10 @@ Single Node Openstack Juno :
     Eth0: Public Network/Management Network
     Eth1: Data Network
 
-Download the Openstak-ODL-Scripts::
+Download the Openstack-ODL-Script::
   
-  git clone https://github.com/romilgupta/Openstack-ODL-Scripts.git
-  cd Openstack-ODL-Scripts
+  git clone https://github.com/romilgupta/Openstack-ODL-Script.git
+  cd Openstack-ODL-Script
   
 Run ``python install_openstack.py``
 
