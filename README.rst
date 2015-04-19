@@ -2,7 +2,7 @@
 Openstack with Opendaylight Installation script for Ubuntu 14.04 LTS
 ====================================================================
 
-Single Node Openstack Juno :
+Single Node Openstack Kilo :
 --------------------------
 
   Operating System : Ubuntu14.04 LTS
