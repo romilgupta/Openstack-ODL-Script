@@ -411,7 +411,7 @@ def install_and_configure_neutron():
 
     add_to_conf(neutron_l3_ini, "DEFAULT", "interface_driver", "neutron.agent.linux.interface.OVSInterfaceDriver")
 
-    execute("neutron-db-manage --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini upgrade kilo")
+    execute("neutron-db-manage --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini upgrade head")
 
     execute("service neutron-server restart", True)
     execute("service neutron-dhcp-agent restart", True)
