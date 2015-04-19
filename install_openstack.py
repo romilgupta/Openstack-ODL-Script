@@ -128,14 +128,14 @@ def initialize_system():
     if not os.geteuid() == 0:
         sys.exit('Please re-run the script with root user')
 
-    if offline_mode == 'True':
+    if offline_mode == 'False':
         execute("apt-get clean" , True)
         execute("apt-get autoclean -y" , True)
         execute("apt-get update -y" , True)
     execute("apt-get install ubuntu-cloud-keyring python-setuptools python-iniparse python-psutil -y", True)
     delete_file("/etc/apt/sources.list.d/juno.list")
     execute("echo deb http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/juno main >> /etc/apt/sources.list.d/juno.list")
-    if offline_mode == 'True':
+    if offline_mode == 'False':
         execute("apt-get update -y", True)
 
     global iniparse
