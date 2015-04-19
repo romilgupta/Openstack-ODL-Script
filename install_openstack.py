@@ -123,7 +123,6 @@ def execute_db_commnads(command):
     output = execute(cmd)
     return output
 
-
 def initialize_system():
     if not os.geteuid() == 0:
         sys.exit('Please re-run the script with root user')
@@ -133,8 +132,8 @@ def initialize_system():
         execute("apt-get autoclean -y" , True)
         execute("apt-get update -y" , True)
     execute("apt-get install ubuntu-cloud-keyring python-setuptools python-iniparse python-psutil -y", True)
-    delete_file("/etc/apt/sources.list.d/juno.list")
-    execute("echo deb http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/juno main >> /etc/apt/sources.list.d/juno.list")
+    delete_file("/etc/apt/sources.list.d/kilo.list")
+    execute("echo deb http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/kilo main >> /etc/apt/sources.list.d/kilo.list")
     if offline_mode == 'True':
         execute("apt-get update -y", True)
 
@@ -412,7 +411,7 @@ def install_and_configure_neutron():
 
     add_to_conf(neutron_l3_ini, "DEFAULT", "interface_driver", "neutron.agent.linux.interface.OVSInterfaceDriver")
 
-    execute("neutron-db-manage --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini upgrade juno")
+    execute("neutron-db-manage --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini upgrade kilo")
 
     execute("service neutron-server restart", True)
     execute("service neutron-dhcp-agent restart", True)
