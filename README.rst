@@ -24,7 +24,6 @@ Script will prompt you to enter following inputs::
   raw_input("Management Interface IP: ")
   raw_input("Data Interface IP: ")
   raw_input("OpenDaylight Controller IP: ")
-  raw_input("Opendaylight Controller Port: ")
   raw_input("Offline Mode True|False: ") # Provide False when you are runnning it first time.
 
 The script will install following components of openstack and configure them::
