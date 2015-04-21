@@ -154,7 +154,8 @@ def initialize_system():
 ip_address_mgmt = raw_input("Management Interface IP: ")
 ip_address_data = raw_input("Data Interface IP: ")
 odl_ip = raw_input("OpenDaylight Controller IP: ")
-odl_port = raw_input("Opendaylight Controller Port: ")
+# odl_port = raw_input("Opendaylight Controller Port: ")
+odl_port = 8080
 offline_mode = raw_input("Offline Mode True|False: ")
 
 def install_rabbitmq():
@@ -425,6 +426,7 @@ def install_and_configure_ovs_odl():
     execute("sudo ovs-vsctl set-manager tcp:%s:6640" % odl_ip)
     ovstbl  = execute("sudo ovs-vsctl get Open_vSwitch . _uuid")
     execute("sudo ovs-vsctl set Open_vSwitch %(ovstbl)s other_config:local_ip=%(ip_address_data)s" % {'ovstbl': ovstbl, 'ip_address_data': ip_address_data})
+    execute("ovs-vsctl --may-exist add-br br-int")
     execute("ovs-vsctl list Open_vSwitch", True)
 
 
