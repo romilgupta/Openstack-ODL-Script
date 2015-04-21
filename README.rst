@@ -54,6 +54,6 @@ Follow the given steps::
 
   feature:install odl-ovsdb-openstack odl-dlux-core
 
-  References::
+References::
   
-    https://wiki.opendaylight.org/view/OpenStack_and_OpenDaylight
+  https://wiki.opendaylight.org/view/OpenStack_and_OpenDaylight
