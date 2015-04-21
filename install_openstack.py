@@ -153,7 +153,8 @@ def initialize_system():
 ip_address_mgmt = raw_input("Management Interface IP: ")
 ip_address_data = raw_input("Data Interface IP: ")
 odl_ip = raw_input("OpenDaylight Controller IP: ")
-odl_port = raw_input("Opendaylight Controller Port: ")
+#odl_port = raw_input("Opendaylight Controller Port: ")
+odl_port = 8080
 offline_mode = raw_input("Offline Mode True|False: ")
 
 def install_rabbitmq():
