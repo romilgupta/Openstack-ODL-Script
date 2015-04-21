@@ -19,7 +19,7 @@ Download the Openstack-ODL-Script::
   
 Run ``python install_openstack.py``
 
-Script will prompt you to enter following inputs:
+Script will prompt you to enter following inputs::
 
   raw_input("Management Interface IP: ")
   raw_input("Data Interface IP: ")
@@ -54,5 +54,5 @@ Follow the given steps::
 
   feature:install odl-ovsdb-openstack odl-dlux-core
 
-References::
+References:
   https://wiki.opendaylight.org/view/OpenStack_and_OpenDaylight
