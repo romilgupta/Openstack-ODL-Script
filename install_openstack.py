@@ -424,6 +424,7 @@ def install_and_configure_ovs_odl():
     execute("sudo ovs-vsctl set-manager tcp:%s:6640" % odl_ip)
     ovstbl  = execute("sudo ovs-vsctl get Open_vSwitch . _uuid")
     execute("sudo ovs-vsctl set Open_vSwitch %(ovstbl)s other_config:local_ip=%(ip_address_data)s" % {'ovstbl': ovstbl, 'ip_address_data': ip_address_data})
+    execute("ovs-vsctl --may-exist add-br br-int")
     execute("ovs-vsctl list Open_vSwitch", True)
 
 
