@@ -54,3 +54,7 @@ Follow the given steps::
   bin/karaf 
 
   feature:install odl-ovsdb-openstack odl-dlux-core
+
+References::
+  https://wiki.opendaylight.org/view/OpenStack_and_OpenDaylight
+  
