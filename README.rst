@@ -34,3 +34,23 @@ The script will install following components of openstack and configure them::
   Openvswitch
   Nova(nova-api nova-cert nova-scheduler nova-conductor novnc nova-consoleauth nova-novncproxy, nova-compute)
   Dashboard
+
+
+==============================================
+Opendaylight Installation for Ubuntu 14.04 LTS
+==============================================
+
+Follow the given steps::
+
+  sudo apt-get install maven openjdk-7-jre openjdk-7-jdk
+
+  vi ~/.bashrc
+  export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-i386
+
+  # Helium Stable Distribution Artifacts
+  wget https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.2.3-Helium-SR3/distribution-karaf-0.2.3-Helium-SR3.zip
+  unzip distribution-karaf-0.2.3-Helium-SR3.zip
+  cd distribution-karaf-0.2.3-Helium-SR3
+  bin/karaf 
+
+  feature:install odl-ovsdb-openstack odl-dlux-core
