@@ -13,7 +13,8 @@ Single Node Openstack Juno :
     Eth1: Data Network
 
 Download the Openstack-ODL-Script::
-  
+
+  sudo -i # Scripts need Root user privileges
   git clone https://github.com/romilgupta/Openstack-ODL-Script.git
   cd Openstack-ODL-Script
   
@@ -34,6 +35,12 @@ The script will install following components of openstack and configure them::
   Openvswitch
   Nova(nova-api nova-cert nova-scheduler nova-conductor novnc nova-consoleauth nova-novncproxy, nova-compute)
   Dashboard
+
+Source authetication file for CLI ``source adminrc``
+
+Horizon::
+  
+  Login into horizon http://<Mgmt_Interface_IP>/horizon  Username:admin  Password:password
 
 
 ==============================================
@@ -57,6 +64,10 @@ Follow the given steps::
   feature:install odl-dlux-all odl-restconf odl-l2switch-switch
 
 Troubleshooting:
+
+Dlux could be accessible::
+
+  http://192.168.1.63:8181/dlux/index.html Username:admin  Password:admin
 
 sample output's::
   
