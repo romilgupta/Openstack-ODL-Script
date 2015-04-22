@@ -41,6 +41,10 @@ Source authetication file for CLI ``source adminrc``
 Horizon::
   
   Login into horizon http://<Mgmt_Interface_IP>/horizon  Username:admin  Password:password
+  
+Download Cirros Images::
+
+  http://cloudhyd.com/openstack/images/images.html
 
 
 ==============================================
