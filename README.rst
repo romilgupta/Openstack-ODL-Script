@@ -56,11 +56,11 @@ Follow the given steps::
   feature:install odl-ovsdb-openstack odl-dlux-core
   feature:install odl-dlux-all odl-restconf odl-l2switch-switch
 
-Troubleshot::
+Troubleshooting::
 
-  sample output:
+  sample output's
   
-  sudo ovs-vsctl show
+  ``sudo ovs-vsctl show``
   
   ad36014f-3918-402f-9b5f-d89c7b5096c4
     Manager "tcp:192.168.1.63:6640"
@@ -79,7 +79,7 @@ Troubleshot::
     ovs_version: "2.0.2"
 
   
- sudo ovs-ofctl dump-flows br-int --protocols=OpenFlow13
+ ``sudo ovs-ofctl dump-flows br-int --protocols=OpenFlow13``
   
  OFPST_FLOW reply (OF1.3) (xid=0x2):
  cookie=0x0, duration=316.283s, table=0, n_packets=0, n_bytes=0, priority=8192,in_port=1 actions=drop
